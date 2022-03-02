@@ -1,15 +1,16 @@
 package handler
 
 import (
-	"context"
 	example "IHome/GetUserHouses/proto/example"
-	"github.com/astaxie/beego"
+	"IHome/IhomeWeb/models"
 	"IHome/IhomeWeb/utils"
-	"log"
-	"github.com/garyburd/redigo/redis"
-	"github.com/astaxie/beego/orm"
-	"IHome/IhomeWeb/model"
+	"context"
 	"encoding/json"
+	"log"
+
+	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/orm"
+	"github.com/garyburd/redigo/redis"
 )
 
 type Example struct{}

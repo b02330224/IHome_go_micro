@@ -1,20 +1,25 @@
 package handler
 
 import (
-	"context"
 	example "IHome/GetSmscd/proto/example"
-	"fmt"
 	"IHome/IhomeWeb/utils"
+	"context"
+	"fmt"
+
 	"github.com/astaxie/beego/orm"
 
-	"IHome/IhomeWeb/model"
-	"github.com/garyburd/redigo/redis"
+	models "IHome/IhomeWeb/model"
 	"log"
 	"math/rand"
 	"time"
-	"github.com/SubmailDem/submail"
+
+	"github.com/garyburd/redigo/redis"
+
+	//"github.com/SubmailDem/submail"
 	"strconv"
 	"strings"
+
+	"github.com/xiunew/SUBMAIL/submail"
 )
 
 type Example struct{}
@@ -83,20 +88,19 @@ func (e *Example) GetSmscd(ctx context.Context, req *example.Request, rsp *examp
 	//8.对短信的发送的验证码进行校验
 	bo := strings.Contains(send, "success")
 	if bo != true {
-		fmt.Println("短信验证码发送失败 ！" )
+		fmt.Println("短信验证码发送失败 ！")
 		rsp.Errno = utils.RECODE_DATAERR
 		rsp.Errmsg = utils.RecodeText(rsp.Errno)
 		return nil
 	}
 	//9.将随机数和手机号存入redis
-	err =bm.Put(req.Mobile,strconv.Itoa(size),time.Second*300)
-	if err!=nil{
-		fmt.Println("随机数存储失败 ！" )
+	err = bm.Put(req.Mobile, strconv.Itoa(size), time.Second*300)
+	if err != nil {
+		fmt.Println("随机数存储失败 ！")
 		rsp.Errno = utils.RECODE_DBERR
 		rsp.Errmsg = utils.RecodeText(rsp.Errno)
 		return nil
 	}
-
 
 	return nil
 

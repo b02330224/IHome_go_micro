@@ -16,14 +16,13 @@ var (
 	G_mysql_addr   string //mysql ip 地址
 	G_mysql_port   string //mysql 端口
 	G_mysql_dbname string //mysql db name
-	G_fastdfs_port   string //fastdfs 端口
+	G_fastdfs_port string //fastdfs 端口
 	G_fastdfs_addr string //fastdfs ip
 )
 
-
 func InitConfig() {
 	//从配置文件读取配置信息
-	appconf, err := config.NewConfig("ini", "/home/itcast/workspace/go/src/sss/IhomeWeb/conf/app.conf")
+	appconf, err := config.NewConfig("ini", "./IhomeWeb/conf/app.conf")
 	if err != nil {
 		beego.Debug(err)
 		return
@@ -37,7 +36,7 @@ func InitConfig() {
 	G_mysql_addr = appconf.String("mysqladdr")
 	G_mysql_port = appconf.String("mysqlport")
 	G_mysql_dbname = appconf.String("mysqldbname")
-	G_fastdfs_port  = appconf.String("fastdfsport")
+	G_fastdfs_port = appconf.String("fastdfsport")
 	G_fastdfs_addr = appconf.String("fastdfsaddr")
 	return
 }

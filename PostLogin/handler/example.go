@@ -1,15 +1,16 @@
 package handler
 
 import (
-	"context"
-	example "IHome/PostLogin/proto/example"
+	"IHome/IhomeWeb/models"
 	"IHome/IhomeWeb/utils"
-	"github.com/astaxie/beego/orm"
+	example "IHome/PostLogin/proto/example"
+	"context"
 	"fmt"
-	"IHome/IhomeWeb/model"
 	"log"
 	"strconv"
 	"time"
+
+	"github.com/astaxie/beego/orm"
 )
 
 type Example struct{}

@@ -4,12 +4,13 @@ import (
 	"context"
 
 	example "IHome/GetUserInfo/proto/example"
+	"IHome/IhomeWeb/models"
 	"IHome/IhomeWeb/utils"
 	"log"
-	"github.com/garyburd/redigo/redis"
-	"github.com/astaxie/beego/orm"
-	"IHome/IhomeWeb/model"
 	"strconv"
+
+	"github.com/astaxie/beego/orm"
+	"github.com/garyburd/redigo/redis"
 )
 
 type Example struct{}

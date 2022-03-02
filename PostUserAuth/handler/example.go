@@ -3,14 +3,15 @@ package handler
 import (
 	"context"
 
+	"IHome/IhomeWeb/models"
+	"IHome/IhomeWeb/utils"
 	example "IHome/PostUserAuth/proto/example"
 	"fmt"
-	"IHome/IhomeWeb/utils"
 	"log"
-	"github.com/garyburd/redigo/redis"
-	"github.com/astaxie/beego/orm"
-	"IHome/IhomeWeb/model"
 	"time"
+
+	"github.com/astaxie/beego/orm"
+	"github.com/garyburd/redigo/redis"
 )
 
 type Example struct{}

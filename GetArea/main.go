@@ -1,11 +1,13 @@
 package main
 
 import (
-	"github.com/micro/go-log"
-	"github.com/micro/go-micro"
 	"IHome/GetArea/handler"
 
+	"github.com/micro/go-log"
+	"github.com/micro/go-micro"
+
 	example "IHome/GetArea/proto/example"
+
 	"github.com/micro/go-grpc"
 )
 
